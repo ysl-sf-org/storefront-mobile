@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-navbar color="topMenu">
+    <img style="width:45px;height:45px;float:left;" src="build/assets/common/case_logo.png" class="pure-img">
+    <ion-title ng-href="https://www.ibm.com/devops/method/category/architectures/" target="_blank">IBM Cloud Architecture</ion-title>  
+  </ion-navbar>
+</ion-header>
+<ion-content>
+  <ion-card *ngFor="let card of cards">
+    <img src="build/assets/items/{{card.img}}" (click)="cardTapped(card)" />
+    <ion-card-content>
+      <h2 class="card-title">
+        {{card.name}}
+      </h2>
+    </ion-card-content>
+    <ion-row no-padding>
+      <ion-col>
+        <button ion-button clear small icon-left (click)="favorite(card)">
+          <ion-icon name='pricetag'></ion-icon>
+          ${{card.price}}
+        </button>
+      </ion-col>
+      <ion-col text-right>
+        <button ion-button clear small color="danger" icon-left (click)="share(card)">
+          <ion-icon name='share-alt'></ion-icon>
+          Share
+        </button>
+      </ion-col>
+    </ion-row>
+  </ion-card>
+  </ion-content>

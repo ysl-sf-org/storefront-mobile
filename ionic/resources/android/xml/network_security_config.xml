@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<network-security-config>
+  <domain-config cleartextTrafficPermitted="true">
+    <domain includeSubdomains="true">192.168.1.5</domain>
+     <domain includeSubdomains="true">web-bluecompute.apps.mfstorefront.os.fyre.ibm.com</domain>
+  </domain-config>
+</network-security-config>

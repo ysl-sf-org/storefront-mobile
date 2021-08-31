@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-navbar color="topMenu">
+    <img style="width:45px;height:45px;float:left;" src="build/assets/common/case_logo.png" class="pure-img">
+    <ion-title ng-href="https://www.ibm.com/devops/method/category/architectures/" target="_blank">IBM Cloud Architecture</ion-title>    
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <div align="center">    
+      <img class="profile-image" src="build/assets/common/ibmprofile.jpg">  
+        <h5>First Name: {{customerInfo.firstName}}</h5>
+        <h5>Last Name: {{customerInfo.lastName}}</h5>
+        <h5>Username: {{customerInfo.username}}</h5>
+        <h5>Email: {{customerInfo.email}}</h5>
+    </div>
+  <div style="margin-top:2em;">
+    <h3>
+      Order History
+    </h3>
+  </div>
+  <ion-row class="row header">
+    <ion-col col-3 class="col">Date</ion-col>
+    <ion-col col-6 class="col">Item</ion-col>
+    <ion-col col-3 class="col">Quantity</ion-col>
+  </ion-row>
+  <ion-row class="row" *ngFor="let order of ordersData">
+    <ion-col col-3 class="col">{{order.date | date: "yyyy/MM/dd HH:mm:ss"}}</ion-col>
+    <ion-col col-6 class="col">{{order.itemName}}</ion-col>
+    <ion-col col-3 class="col">{{order.count}}</ion-col>
+  </ion-row>
+</ion-content>

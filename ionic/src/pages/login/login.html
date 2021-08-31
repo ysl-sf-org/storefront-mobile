@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-navbar color="topMenu">
+    <img style="width:45px;height:45px;float:left;" src="build/assets/common/case_logo.png" class="pure-img">
+    <ion-title ng-href="https://www.ibm.com/devops/method/category/architectures/" target="_blank">IBM Cloud Native Reference Architecture</ion-title>  
+  </ion-navbar>
+</ion-header>
+<ion-content padding text-center id="page-Login">
+  <div>
+      <form>
+          <ion-item>
+            <ion-label stacked>Username</ion-label>
+            <ion-input type="email" name="username" [(ngModel)]="username"></ion-input>
+          </ion-item>
+        
+          <ion-item>
+            <ion-label stacked>Password</ion-label>
+            <ion-input type="password"  name="password" [(ngModel)]="password"></ion-input>
+          </ion-item>
+          <div style="margin-top: 3rem;">
+              <button ion-button block (click)="login()">Sign in</button>
+          </div>
+          <div [hidden]="!loginError" class="content is-center" style="color: red;">
+            * Invalid user information, please sign in again.
+          </div>
+      </form>
+  </div>
+</ion-content>

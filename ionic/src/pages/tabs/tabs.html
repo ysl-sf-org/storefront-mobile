@@ -1,0 +1,7 @@
+<ion-tabs color="topMenu" name="mainTab">
+  <ion-tab [root]="tab1Root" (ionSelect)="setActiveTab('Home')" tabTitle="Home" tabIcon="home"></ion-tab>
+  <ion-tab [root]="tab2Root" (ionSelect)="setActiveTab('Catalog')" tabTitle="Catalog" tabIcon="book"></ion-tab>
+  <ion-tab [root]="tab3Root" (ionSelect)="setActiveTab('Login')" [show]="!this.restService.userState.authenticated" tabTitle="Login" tabIcon="log-in"></ion-tab>
+  <ion-tab [root]="tab4Root" (ionSelect)="setActiveTab('Profile')" [show]="this.restService.userState.authenticated" tabTitle="Profile" tabIcon="person"></ion-tab>
+  <ion-tab (ionSelect)="logout()" [show]="this.restService.userState.authenticated" tabTitle="Logout" tabIcon="log-out"></ion-tab>
+</ion-tabs>

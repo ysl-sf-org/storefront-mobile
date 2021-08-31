@@ -1,0 +1,17 @@
+{
+    "securityCheckDefinitions": {
+        "BlueAuthLogin": {
+            "properties": {
+                "TokenEndpointURL": {
+                    "value": "<---ENTER TOKEN ENDPOINT URL--->"
+                },
+                "ClientSecret": {
+                    "value": "<---ENTER CLIENT SECRET--->"
+                },
+                "ClientID": {
+                    "value": "<---ENTER CLIENT ID--->"
+                }
+            }
+        }
+    }
+}

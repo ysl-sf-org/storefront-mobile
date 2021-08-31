@@ -1,0 +1,120 @@
+{
+    "platforms": [
+        {
+            "applicationKey": {
+                "version": "1.0.0",
+                "clientPlatform": "android",
+                "packageName": "com.ibm.storefront"
+            },
+            "displayName": "StoreFront",
+            "scopeElementMapping": {
+                "push.mobileclient": "BlueAuthLogin"
+            }
+        },
+        {
+            "applicationKey": {
+                "version": "1.0.0",
+                "clientPlatform": "ios",
+                "bundleId": "com.ibm.storefront"
+            },
+            "displayName": "StoreFront",
+            "scopeElementMapping": {
+                "push.mobileclient": "BlueAuthLogin"
+            }
+        }
+    ],
+    "services": [
+        {
+            "name": "push",
+            "settings": {
+                "fcm": {
+                    "apiKey": "<insert apikey here>",
+                    "senderId": "<insert senderid here>"
+                },
+                "apns": {
+                    "certificate": "<location of .p12>",
+                    "isSandBox": true,
+                    "password": "<password>"
+                }
+            }
+        }
+    ],
+    "adapters": [
+        {
+            "adapter": "BlueAuthLogin",
+            "securityCheckDefinitions": {
+                "BlueAuthLogin": {
+                    "properties": {
+                        "TokenEndpointURL": {
+                            "value": "<storefront auth service baseurl>/oauth/token"
+                        },
+                        "ClientSecret": {
+                            "value": "bluecomputewebs3cret"
+                        },
+                        "ClientID": {
+                            "value": "bluecomputeweb"
+                        }
+                    }
+                }
+            }
+        }
+    ],
+    "backendServices": [
+        {
+            "service": "catalogService",
+            "baseUrl": "<storefront catalog service baseurl>/micro",
+            "auth": {
+                "type": "extauth",
+                "credential": {
+                    "username": "na",
+                    "password": "na"
+                }
+            },
+            "ConnectionProperties": {
+                "maxConnetions": "50",
+                "connectionTimeoutInMilliseconds": "3000",
+                "socketTimeoutInMilliseconds": "3000"
+            }
+        },
+        {
+            "service": "ordersService",
+            "baseUrl": "<storefront orders service baseurl>/micro",
+            "auth": {
+                "type": "extauth",
+                "credential": {
+                    "username": "na",
+                    "password": "na"
+                }
+            },
+            "ConnectionProperties": {
+                "maxConnetions": "50",
+                "connectionTimeoutInMilliseconds": "3000",
+                "socketTimeoutInMilliseconds": "3000"
+            }
+        },
+        {
+            "service": "customerService",
+            "baseUrl": "<storefront customer service baseurl>/micro",
+            "auth": {
+                "type": "extauth",
+                "credential": {
+                    "username": "na",
+                    "password": "na"
+                }
+            },
+            "ConnectionProperties": {
+                "maxConnetions": "50",
+                "connectionTimeoutInMilliseconds": "3000",
+                "socketTimeoutInMilliseconds": "3000"
+            }
+        }
+    ],
+    "confidentialClients": [
+        {
+            "id": "storefront",
+            "secret": "storefront",
+            "allowedScope": "messages.write push.application.*",
+            "displayName": "StoreFront Microservices"
+        }
+    ]
+}

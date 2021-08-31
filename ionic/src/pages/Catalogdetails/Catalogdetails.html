@@ -1,0 +1,52 @@
+<ion-header>
+  <ion-navbar color="topMenu">
+      <ion-title ng-href="https://www.ibm.com/devops/method/category/architectures/" target="_blank">IBM Cloud Architecture</ion-title>  
+  </ion-navbar>
+</ion-header>
+<ion-content >
+    <h2 style="text-align:center;">
+      {{card.name}}
+    </h2>
+  <ion-row>
+    <ion-card>
+      <img src="build/assets/items/{{card.img}}" />
+      <ion-row no-padding>
+        <ion-col>
+          <button ion-button clear small icon-left (click)="favorite(card)">
+            <ion-icon name='pricetag'></ion-icon>
+            ${{card.price}}
+          </button>
+        </ion-col>
+      </ion-row>
+    </ion-card>
+  </ion-row>
+  <div [hidden]="!this.restService.userState.authenticated" style="padding-left: 1.5em;padding-right: 1.5em;">
+    <h4>
+      Place your order here
+    </h4>
+    <ion-row no-padding>
+      <ion-col>
+        <ion-select [(ngModel)]="quantity" (ionChange)="setQuantity(quantity)"  placeholder="-">
+          <ion-option value="1">1</ion-option>
+          <ion-option value="2">2</ion-option>
+          <ion-option value="3">3</ion-option>
+          <ion-option value="4">4</ion-option>
+          <ion-option value="5">5</ion-option>
+         </ion-select>
+      </ion-col>
+      <ion-col text-right>
+         <button (click)="buyItem()" ion-button>Buy</button>
+      </ion-col>
+    </ion-row>
+  </div>
+ 
+    <div style="padding-left: 1.5em;padding-right: 1.5em;">
+      <h4>
+        Product Description
+      </h4>
+        <p>
+          {{card.description}}
+        </p>
+    </div>
+   
+</ion-content>

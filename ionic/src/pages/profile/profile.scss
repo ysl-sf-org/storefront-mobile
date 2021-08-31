@@ -1,0 +1,30 @@
+page-profile {
+    .header .col {
+        background-color:lightgrey;
+    }
+    
+    .col {
+        border: solid 1px grey;
+        border-bottom-style: none;
+        border-right-style: none;
+        display: flex;
+        justify-content: center;
+    }
+    
+    .col:last-child {
+        border-right: solid 1px grey;
+    }
+    
+    .row:last-child .col {
+        border-bottom: solid 1px grey;
+    }
+
+    .profile-image{
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+    }
+
+}
+
+
